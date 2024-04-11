@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 
 Route::post('/v1/register', '\App\Api\Auth\Controllers\AuthController@register');
 Route::post('/v1/token', '\App\Api\Auth\Controllers\AuthController@token');
