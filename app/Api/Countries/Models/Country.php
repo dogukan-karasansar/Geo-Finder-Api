@@ -23,4 +23,5 @@ class Country extends Model
         'capital',
     ];
     
+
 }
