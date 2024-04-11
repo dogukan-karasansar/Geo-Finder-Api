@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Api\Countries\Interfaces\CountryInterface;
+use App\Api\Countries\Repositories\CountryRepository;
+use App\Api\Countries\Resources\CountryResource;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(CountryInterface::class, CountryRepository::class);
     }
 
     /**
@@ -19,6 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        CountryResource::withoutWrapping();
     }
 }
