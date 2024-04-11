@@ -2,8 +2,9 @@
 
 namespace App\Api\Countries\Interfaces;
 
+use Spatie\QueryBuilder\QueryBuilder;
 
 interface CountryInterface
 {
-    public function getCountries();
+    public function getCountries(): QueryBuilder;
 }
