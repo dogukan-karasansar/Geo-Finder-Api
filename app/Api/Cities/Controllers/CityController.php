@@ -1,19 +1,21 @@
 <?php
 
-namespace App\Api\Countries\Controllers;
+namespace App\Api\Cities\Controllers;
 
-use App\Api\Countries\Interfaces\CountryInterface;
+use App\Api\Cities\Interfaces\CityInterface;
+use App\Api\Cities\Models\City;
+use App\Api\Cities\Resources\CityResource;
 use App\Api\Countries\Resources\CountryResource;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CountryController extends Controller
+class CityController extends Controller
 {
-    protected CountryInterface $countryInterface;
+    protected CityInterface $cityInterface;
 
-    public function __construct(CountryInterface $countryInterface)
+    public function __construct(CityInterface $cityInterface)
     {
-        $this->countryInterface = $countryInterface;
+        $this->cityInterface = $cityInterface;
     }
 
     /**
@@ -21,11 +23,12 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countries = $this->countryInterface
-            ->getCountries()
+
+        $cities = $this->cityInterface
+            ->getCities()
             ->paginate(request()->integer('per_page') ?? 10);
 
-        return CountryResource::collection($countries);
+        return CityResource::collection($cities);
     }
 
     /**

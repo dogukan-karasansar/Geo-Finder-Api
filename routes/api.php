@@ -11,6 +11,6 @@ Route::group([
 ], function () {
     Route::apiResource('countries', 'App\Api\Countries\Controllers\CountryController')
         ->only('index');
-    Route::apiResource('cities', 'App\Api\Cities\Controllers\CitiesController')
+    Route::apiResource('cities', 'App\Api\Cities\Controllers\CityController')
         ->only('index');
 });
