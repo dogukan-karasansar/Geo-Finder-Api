@@ -41,6 +41,7 @@ To fetch countries based on a specific country, you can use the "Get Countries" 
 - **URL:** `{{API_URL}}/v1/countries?per_page=10`
 - **Query Parameters:**
   - `filter[name]`: Filtering by country name (disabled)
+  - `filter[code]`: Filtering by country code
   - `per_page`: Number of countries per page
 
 ### Get Cities
