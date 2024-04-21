@@ -6,6 +6,9 @@ set -e
 # Uygulama dizinine git
 cd /var/www/html/Geo-Finder-Api
 
+# Değişiklikleri alır
+git pull
+
 # Composer bağımlılıklarını yükle
 composer install --no-dev --prefer-dist
 
