@@ -33,5 +33,4 @@ jobs:
     - name: Deploy to Production
       run: |
         echo "Deploying to production server..."
-        rsync -avz --delete ./ root@${{ secrets.SERVER_IP }}:/var/www/html/Geo-Finder-Api/
         ssh root@${{ secrets.SERVER_IP }} "cd /var/www/html/Geo-Finder-Api/ && ./deploy_script.sh"
