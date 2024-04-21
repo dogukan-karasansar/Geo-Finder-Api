@@ -41,4 +41,4 @@ jobs:
       run: |
         echo "Deploying to production server..."
         rsync -avz --delete ./ root@${{ secrets.SERVER_IP }}:/var/www/html/Geo-Finder-Api/
-        ssh -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }} "cd /var/www/html/Geo-Finder-Api/ && ./deploy_script.sh"
+        ssh -vvv -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }} "cd /var/www/html/Geo-Finder-Api/ && ./deploy_script.sh"
